@@ -38,6 +38,41 @@ Verify:
 queryli --help
 ```
 
+## AI Agent Skill
+
+Install a `queryli` skill for supported local coding agents:
+
+```bash
+queryli install-skill
+```
+
+By default this installs user-level skills for:
+
+- Codex: `~/.agents/skills/queryli/SKILL.md`
+- Claude Code: `~/.claude/skills/queryli/SKILL.md`
+- Cursor: `~/.cursor/skills/queryli/SKILL.md`
+- Gemini CLI: `~/.gemini/skills/queryli/SKILL.md`
+- Windsurf: `~/.codeium/windsurf/skills/queryli/SKILL.md`
+
+Install for one agent:
+
+```bash
+queryli install-skill --agent claude
+queryli install-skill --agent cursor
+```
+
+Install into the current project:
+
+```bash
+queryli install-skill --agent all --scope project
+```
+
+Use a custom skills directory:
+
+```bash
+queryli install-skill --dir ~/.some-agent/skills
+```
+
 ## Quick Start
 
 Create a PostgreSQL profile:
@@ -143,41 +178,6 @@ Use `--format` or `-f`:
 queryli query "SELECT * FROM users LIMIT 5" --format table
 queryli query "SELECT * FROM users LIMIT 5" --format json
 queryli query "SELECT * FROM users LIMIT 5" --format csv
-```
-
-## AI Agent Skill
-
-Install a `queryli` skill for supported local coding agents:
-
-```bash
-queryli install-skill
-```
-
-By default this installs user-level skills for:
-
-- Codex: `~/.agents/skills/queryli/SKILL.md`
-- Claude Code: `~/.claude/skills/queryli/SKILL.md`
-- Cursor: `~/.cursor/skills/queryli/SKILL.md`
-- Gemini CLI: `~/.gemini/skills/queryli/SKILL.md`
-- Windsurf: `~/.codeium/windsurf/skills/queryli/SKILL.md`
-
-Install for one agent:
-
-```bash
-queryli install-skill --agent claude
-queryli install-skill --agent cursor
-```
-
-Install into the current project:
-
-```bash
-queryli install-skill --agent all --scope project
-```
-
-Use a custom skills directory:
-
-```bash
-queryli install-skill --dir ~/.some-agent/skills
 ```
 
 ## Development
