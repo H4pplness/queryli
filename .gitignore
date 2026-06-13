@@ -4,6 +4,8 @@
 *.test
 *.out
 coverage.out
+/dist/
+*.tgz
 
 # Local scratch databases
 *.db

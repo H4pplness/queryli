@@ -1,0 +1,40 @@
+{
+  "name": "queryli",
+  "version": "0.1.0",
+  "description": "Multi-database CLI query tool",
+  "bin": {
+    "queryli": "./bin/queryli.js"
+  },
+  "files": [
+    "bin/",
+    "dist/",
+    "README.md"
+  ],
+  "scripts": {
+    "build:npm": "node scripts/build-npm.js",
+    "prepack": "npm run build:npm",
+    "test": "go test ./..."
+  },
+  "keywords": [
+    "cli",
+    "database",
+    "postgres",
+    "mysql",
+    "sqlite",
+    "oracle",
+    "sql"
+  ],
+  "author": "",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H4pplness/queryli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/H4pplness/queryli/issues"
+  },
+  "homepage": "https://github.com/H4pplness/queryli#readme",
+  "engines": {
+    "node": ">=18"
+  }
+}

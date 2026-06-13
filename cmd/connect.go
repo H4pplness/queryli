@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
-	"syscall"
 	"time"
 
 	"github.com/spf13/cobra"
@@ -72,9 +71,7 @@ If no profile is specified, the active profile from config is used.`,
 
 		// Spawn daemon
 		daemonCmd := exec.Command(exe, "__daemon", "--profile", profileName)
-		daemonCmd.SysProcAttr = &syscall.SysProcAttr{
-			CreationFlags: syscall.CREATE_NEW_PROCESS_GROUP,
-		}
+		daemonCmd.SysProcAttr = daemonSysProcAttr()
 		daemonCmd.Stdout = logFile
 		daemonCmd.Stderr = logFile
 		// Pass through QUERYLI_PASSWORD env if set

@@ -14,6 +14,12 @@ It supports PostgreSQL, MySQL, SQLite, and Oracle.
 
 ## Install
 
+With npm:
+
+```bash
+npm install -g queryli
+```
+
 From the repository root:
 
 ```bash
@@ -186,4 +192,23 @@ Build locally:
 
 ```bash
 go build .
+```
+
+Build the npm release binaries:
+
+```bash
+npm run build:npm
+```
+
+Preview the npm package:
+
+```bash
+npm pack --dry-run
+```
+
+Publish to npm:
+
+```bash
+npm login
+npm publish
 ```
