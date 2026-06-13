@@ -1,0 +1,21 @@
+# Go build artifacts
+/queryli
+/queryli.exe
+*.test
+*.out
+coverage.out
+
+# Local scratch databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*~
