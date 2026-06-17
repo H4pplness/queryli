@@ -6,10 +6,10 @@ const root = path.resolve(__dirname, "..");
 const dist = path.join(root, "dist");
 
 const targets = [
-  { goos: "windows", goarch: "amd64", output: "queryli-windows-amd64.exe" },
-  { goos: "linux", goarch: "amd64", output: "queryli-linux-amd64" },
+  { goos: "windows", goarch: "amd64", goamd64: "v1", output: "queryli-windows-amd64.exe" },
+  { goos: "linux", goarch: "amd64", goamd64: "v1", output: "queryli-linux-amd64" },
   { goos: "linux", goarch: "arm64", output: "queryli-linux-arm64" },
-  { goos: "darwin", goarch: "amd64", output: "queryli-darwin-amd64" },
+  { goos: "darwin", goarch: "amd64", goamd64: "v1", output: "queryli-darwin-amd64" },
   { goos: "darwin", goarch: "arm64", output: "queryli-darwin-arm64" }
 ];
 
@@ -24,8 +24,14 @@ for (const target of targets) {
     GOOS: target.goos,
     GOARCH: target.goarch
   };
+  if (target.goamd64) {
+    env.GOAMD64 = target.goamd64;
+  } else {
+    delete env.GOAMD64;
+  }
 
-  console.log(`Building ${target.goos}/${target.goarch} -> dist/${target.output}`);
+  const variant = target.goamd64 ? `/${target.goamd64}` : "";
+  console.log(`Building ${target.goos}/${target.goarch}${variant} -> dist/${target.output}`);
 
   const result = spawnSync(
     "go",

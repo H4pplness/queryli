@@ -194,11 +194,19 @@ Build locally:
 go build .
 ```
 
+Build an amd64 binary compatible with older CPUs:
+
+```bash
+GOAMD64=v1 go build .
+```
+
 Build the npm release binaries:
 
 ```bash
 npm run build:npm
 ```
+
+The npm release build pins `GOAMD64=v1` for amd64 targets so the binaries do not require AVX-capable CPUs.
 
 Preview the npm package:
 

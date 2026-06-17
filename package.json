@@ -1,6 +1,6 @@
 {
   "name": "queryli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Multi-database CLI query tool",
   "bin": {
     "queryli": "./bin/queryli.js"
